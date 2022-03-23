@@ -158,3 +158,14 @@ function value(x){
 value(0);
 value(1);
 value('');
+
+//check truthyOrFalsy value
+function truthyOrFalsy(a) {
+    if(a){
+        return "truthy";
+    }else{
+        return "falsy";
+    }
+}
+truthyOrFalsy(0);
+
