@@ -145,3 +145,16 @@ function checkdata(x){
 }
 checkdata("string");
 checkdata(1234567890806790);
+
+//check truthy false value
+function value(x){
+    if(x==false || x==0 || x==null || x==undefined || x==NaN || x==""){
+        return "false value";
+    }
+    else{
+        return "true value";
+    }
+}
+value(0);
+value(1);
+value('');
