@@ -28,10 +28,16 @@ var array = [
     {personG: 'G', garbage: 'asldkfj'}
 ];
 
+//modified
+//method1
 let element = {};
 for(let i of array){
     delete i.garbage;
 }
 element = Object.assign(element,array); 
 console.log(element);
+
+//method2
+array.forEach((array) => (delete array.garbage));
+console.log(array);
 
