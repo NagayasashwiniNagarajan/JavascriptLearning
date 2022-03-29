@@ -28,12 +28,10 @@ var array = [
     {personG: 'G', garbage: 'asldkfj'}
 ];
 
-for(var i = 0;i<array.length;i++){
-    delete array[i].garbage;
-}
-
 let element = {};
-for(var i=0;i<array.length;i++){
-    element = Object.assign(element,array[i]);
+for(let i of array){
+    delete i.garbage;
 }
+element = Object.assign(element,array); 
 console.log(element);
+
