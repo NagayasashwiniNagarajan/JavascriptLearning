@@ -41,3 +41,5 @@ console.log(element);
 array.forEach((array) => (delete array.garbage));
 console.log(array);
 
+array.map((array) => (delete array.garbage));
+console.log(array);
