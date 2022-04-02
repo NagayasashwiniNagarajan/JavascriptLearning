@@ -34,3 +34,14 @@ function validate(input){
     }
 }
 console.log(validate([1,-2,3,4]));
+
+// Refactored
+
+function validate(i){
+    let value =  Array.isArray(i) ?(i.every((e)=>(e>0))? (i.reduce((a,c)=>(a + c))):"Invalid Input"):'Invalid Input';
+    return value;
+}
+console.log(validate([1,-2,3]));  //Invalid input
+console.log(validate([1,2,3]));  //6
+
+
