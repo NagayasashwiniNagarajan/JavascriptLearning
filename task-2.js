@@ -30,16 +30,11 @@ var array = [
 
 //modified
 //method1
-let element = {};
-for(let i of array){
-    delete i.garbage;
+function filterItems(input){
+    let obj = {};
+    for(item in input){
+        obj[Object.keys(input[item])[0]] = Object.values(input[item])[0];
+    }
+    console.log(obj);
 }
-element = Object.assign(element,array); 
-console.log(element);
-
-//method2
-array.forEach((array) => (delete array.garbage));
-console.log(array);
-
-array.map((array) => (delete array.garbage));
-console.log(array);
+filterItems(array);
