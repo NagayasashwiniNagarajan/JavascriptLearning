@@ -38,3 +38,14 @@ function filterItems(input){
     console.log(obj);
 }
 filterItems(array);
+
+//method modified
+function filterItems(array){
+    let element = {};
+    array.forEach((array)=>(delete array.garbage));
+    let obj1 = array.reduce(function(acc,val){
+        return Object.assign(acc,val);
+    },{});
+    console.log(obj1);
+}
+filterItems(array);
