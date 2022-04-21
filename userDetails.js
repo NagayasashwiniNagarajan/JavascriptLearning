@@ -1,15 +1,22 @@
 var UserDetails = [];
 
-// add User Details
-var addUserDetails = (userName, userState) => {
-  var userId = generateUniqueId(userName);
+// this is function constructor
+// this constructor builds User object
+function User(name, state) {
+   this.name = name;
+   this.state = state;
+}
+
+// pass the User object as parameter to the function.
+var addUserDetails = (User) => {
+  var userId = generateUniqueId(User.name);
   var userDetail = {
     id: userId,
-    fullName: userName,
-    state: userState,
+    fullName: User.name,
+    state: User.state,
   };
   UserDetails.push(userDetail);
-};
+}
 
 // function returns current date with name as userID
 function generateUniqueId(name) {
@@ -38,8 +45,16 @@ function removeUser(id){
     }
 }
 
-addUserDetails("Ram", "Coimbatore");
-addUserDetails("Sam","Chennai");
-console.log(getUserByState("coimbatore"));
-console.log(getUserByName("ram"));
+user1 = new User('Ram','Coimbatore');
+user2 = new User('Sam', 'Chennai');
+
+addUserDetails(user1);
+addUserDetails(user2);
+
+console.log(UserDetails);
+
+console.log(getUserByState("Bangalore"));
+console.log(getUserByName("Sam"));
 console.log(removeUser(1));
+
+console.log(UserDetails);
